@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Java Basics</h1>
+    <script>
+        let flower = "Hello"
+        console.log(flower)
+        let name = "John"
+        const age = 30
+        console.log(name,age)
+
+        let fruits = ["Apple", "Banana", "Cherry"]
+        let numbers = [1, 2, 3, 4, 5]
+        console.log(fruits,numbers)
+
+        let person = {
+            name: "Ravi",
+            age: 25,
+            occupation: "Developer"
+
+
+        };
+        console.log(person.age)
+        console.log(person.name)
+        console.log(person.occupation)
+
+        function greetDeclaration(name) {
+            console.log("Hello, " + name + "!")
+        }
+
+        const greetExpression = function(name) {
+            console.log("Hello, "+ name + "!")
+        }
+
+        const greetArrow = (name) => {
+            console.log("Hello, " + name + "!")
+        }
+
+        greetDeclaration("Ravi")
+        greetExpression("Sunil")
+        greetArrow("John")
+        alert("Hello, World!")
+       const Name = prompt("What is your name?")
+        console.log("Hello, "+ Name + "!")
+
+        const confirmed = confirm("Are you sure?")
+        console.log(confirmed)
+
+        setTimeout(() => {
+            console.log("Timeout executed after 10 seconds!")
+        }, 10000)
+        </script>
+        </body>   </html>
+
+        
+
+
+    
+    
+
