@@ -1,0 +1,19 @@
+.error {
+    color: red;
+}
+.success {
+    color:green;
+}
+.dark-theme {
+    background-color: blueviolet;
+    color: black;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    border: black;
+    background-color: rgb(101, 141, 128);
+}

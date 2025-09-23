@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript form</title>
+    <link rel="stylesheet" href="day3.css">
+    <script src="http://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="container" id="container">
+
+    <h1 class="pb-2 text-2xl text-bold">Contact Us</h1>
+    <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" class="p-2" ><br><br>
+        <span id="name-error" class="error"></span>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" class="p-2"><br><br>
+        <span id="email-error" class="error"></span>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br><br>
+        <span id="message-preview"></span>
+        <button type="submit" class="border p-1 bg-red-300 transition durattion-800 hover:bg-red-900 hover:text-white rounded-lg ">Send</button>
+        <span id="form-status"></span>
+    </form>
+    
+
+    <button id="theme-switch" class="border p-1 rounded-lg bg-blue-300 mt-2">Switch Theme</button>
+    <div id="faq">
+        <h2>FAQ</h2>
+        <button id="faq-toggle" class="border p-1 rounded-lg bg-blue-300">Toggle FAQ</button>
+        <div id="faq-content" style="display:none">
+            <p>This is some FAQ content</p>
+        </div>
+    </div>
+    </div>
+    <script>
+        const form = document.getElementById('contact-form')
+        const nameInput = document.getElementById('name')
+        const emailInput = document.getElementById('email')
+        const messageInput = document.getElementById('message')
+        const nameError = document.getElementById('name-error')
+        const emailError = document.getElementById('email-error')
+        const formStatus = document.getElementById('form-status')
+        const messagePreview = document.getElementById('message-preview')
+        const themeSwitch = document.getElementById('theme-switch')
+        const faqToggle = document.getElementById('faq-toggle')
+        const faqContent = document.getElementById('faq-content')
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            let isValid = true;
+
+            if (name === '') {
+                nameError.textContent = 'Name is required'
+                isValid = false;
+            } else {
+                nameError.textContent = '';
+            }
+
+            if (email === '') {
+                emailError.textContent = 'Email is required'
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            if (isValid) {
+                formStatus.textContent = 'Sending...'
+                setTimeout(() => {
+                    formStatus.textContent = 'Message sent successfully!'
+                    formStatus.classList.add('success')
+                    setTimeout(() => {
+                        formStatus.textContent = ''
+                        formStatus.classList.remove('success')
+                    }, 2000);
+                }, 2000);
+            }
+        })
+
+        const Container = document.getElementById('container')
+
+        messageInput.addEventListener('input', () => {
+            messagePreview.textContent = messageInput.value
+        })
+
+        themeSwitch.addEventListener('click', () => {
+            Container.classList.toggle('bg-blue-500');
+        })
+
+        faqToggle.addEventListener('click', () => {
+            faqContent.style.display = faqContent.style.display ==='none' ? 'block' : 'none';
+        })
+    </script>
+        
+    
+</body>
+</html>
