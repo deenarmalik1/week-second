@@ -69,24 +69,24 @@
             alert('Div 1 has been clicked')
             
             
-        },true)
+        })
 
         div2.addEventListener('click', (h)=>{
             toggle(div2, 'bg-red-400', 'bg-red-600')
             alert('Div 2 has been clicked')
+            h.stopPropagation()
             
-            
-            },true)
+            })
 
         div3.addEventListener('click', (g)=>{
             toggle(div3, 'bg-blue-400', 'bg-blue-600')
           
             alert('Div 3 has been clicked')
-            
+            g.stopPropagation()
             
            
             
-        },true)
+        })
 
         div4.addEventListener('click', (f)=>{
              toggle(div4, 'bg-gray-400', 'bg-gray-600')
